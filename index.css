@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Candal';
+    src:url('Candal.woff') format('woff'),
+        url('Candal.svg#Candal') format('svg'),
+        url('Candal.ttf') format('ttf'),
+        url('Candal.eot'),
+        url('Candal.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+#name {
+    font-size: 50px;
+    color: white;
+    background: url("background.png");
+    font-family: 'Candal';
+    text-shadow: rgba(38, 38, 38, 1.0) 5px 5px;
+}
+
+.result, .type {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 10px 0px;
+}
+
+:root {
+    --selection-background: #AD6956FF;
+}
+::selection {
+    background: var(--selection-background);
+}

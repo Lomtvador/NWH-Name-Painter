@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>NWH Name Painter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="name" contenteditable="true" spellcheck="false">Padawan</div>
+    <input type="color" name="color" id="color" value="#AD6956">
+    <input type="range" id="range" min="0" max="255" step="1" value="255">
+    <button id="paint">Paint!</button>
+    <button id="paintShadow">Paint shadow!</button>
+    <input type="checkbox" name="noShadow" id="noShadow">
+    <label for="noShadow">No shadow (makes name shorter)</label>
+    <a href="index.html">English</a>
+    <a href="index.ru.html">Русский</a>
+    <br>
+    <button class="colors">Black</button>
+    <button class="colors">Red</button>
+    <button class="colors">Green</button>
+    <button class="colors">Yellow</button>
+    <button class="colors">Blue</button>
+    <button class="colors">Cyan</button>
+    <button class="colors">Magenta</button>
+    <button class="colors">White</button>
+    <label for="type1" class="type">Type 1: ^YRRGGBBAA. 256 levels of red, green, blue and transparency</label>
+    <input type="text" name="type1" id="type1" class="result" value="Padawan">
+    <label for="type2" class="type">Type 2: ^XRRGGBB. 256 levels of red, green and blue. No transparency</label>
+    <input type="text" name="type2" id="type2" class="result" value="Padawan">
+    <label for="type3" class="type">Type 3: ^yRGBA. 16 levels of red, green, blue and transparency</label>
+    <input type="text" name="type3" id="type3" class="result" value="Padawan">
+    <label for="type4" class="type">Type 4: ^xRGB. 16 levels of red, green and blue. No transparency</label>
+    <input type="text" name="type4" id="type4" class="result" value="Padawan">
+    <script src="index.js" defer></script>
+</body>
+
+</html>
