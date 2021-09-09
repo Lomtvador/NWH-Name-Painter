@@ -31,6 +31,7 @@ button {
 :root {
     --selection-background: #AD6956FF;
 }
-::selection {
-    background: var(--selection-background);
+#name::selection, #name ::selection {
+    color: var(--selection-background);
+    background: rgba(255, 255, 255, 0);
 }

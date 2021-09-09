@@ -2,7 +2,7 @@ const nameElement = document.getElementById('name')
 const rangeElement = document.getElementById('range')
 const paintElement = document.getElementById('paint')
 const paintShadowElement = document.getElementById('paintShadow')
-const noShadow = document.getElementById('noShadow')
+const enableShadows = document.getElementById('enableShadows')
 const colorElement = document.getElementById('color')
 const resultElement = document.getElementsByClassName('result')
 
@@ -213,20 +213,22 @@ colorElement.oninput = function (e) { updateColor() }
 paintElement.onclick = function (e) {
     document.execCommand('styleWithCSS', false, true)
     document.execCommand('foreColor', false, color)
-    if (noShadow.checked)
-        convertToJK2_old()
-    else
+    window.getSelection().removeAllRanges()
+    if (enableShadows.checked)
         convertToJK2()
+    else
+        convertToJK2_old()
 }
 paintShadowElement.onclick = function (e) {
     document.execCommand('styleWithCSS', false, true)
     document.execCommand('foreColor', false, color)
     let span = window.getSelection().focusNode.parentNode
     span.style.textShadow = "5px 5px" + color
-    if (noShadow.checked)
-        convertToJK2_old()
-    else
+    window.getSelection().removeAllRanges()
+    if (enableShadows.checked)
         convertToJK2()
+    else
+        convertToJK2_old()
 }
 rangeElement.oninput = function (e) {
     colorElement.style.opacity = parseInt(rangeElement.value) / 255
@@ -234,17 +236,17 @@ rangeElement.oninput = function (e) {
 }
 
 nameElement.oninput = function (e) {
-    if (noShadow.checked)
-        convertToJK2_old()
-    else
+    if (enableShadows.checked)
         convertToJK2()
+    else
+        convertToJK2_old()
 }
 
-noShadow.oninput = function (e) {
-    if (noShadow.checked)
-        paintShadowElement.style.visibility = 'hidden'
+enableShadows.oninput = function (e) {
+    if (enableShadows.checked)
+        paintShadowElement.disabled = false
     else
-        paintShadowElement.style.visibility = 'visible'
+        paintShadowElement.disabled = true
 }
 
 const colors = document.getElementsByClassName('colors')
